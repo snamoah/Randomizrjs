@@ -13,6 +13,11 @@ Initialize Randomizr class:
 ```
 var array = [ 2, 4, 20, 10, 6 ];
 
-Randomizr.init(array); //initialize Randomizr with the array
+Randomizr.init(array);        //initialize Randomizr with the array
 ```
 
+To get a random list of all items,
+
+```
+Randomizr.get_all_items();      //get all items from array randomized
+```
