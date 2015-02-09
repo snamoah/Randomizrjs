@@ -16,8 +16,8 @@ Array.prototype.is_empty = function() {
   return (this.length == 0);
 }
 
-Randomizer = function(array) {
-  temp_array = array_of_items = array;
+Randomizr = function() {
+  temp_array = array_of_items = [];
 
   //randomly generate item
   var get_item = function() {
@@ -29,13 +29,22 @@ Randomizer = function(array) {
 
   // public methods
   return {
+    'init': function(array) {
+      temp_array = array_of_items = array;
+    },
     'get_all_items': function() {
       return array_of_items.shuffle();
     },
-    'get_random_item': function(one_at_a_time) {
-      if(one_at_a_time)
-        return get_item();
-      return [get_item(), get_item(), get_item()]; // get an array of 3 eits
+    'get_random_item': function() {
+      return get_item();
+    },
+    'get_random_items': function(number) {
+      items = [];
+
+      for(var i = 0; i < number; i++)
+        items.push(get_item());
+
+      return items;
     }
-  }
+  };
 }();
