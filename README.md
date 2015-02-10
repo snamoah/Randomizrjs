@@ -11,7 +11,7 @@ Here is the link to [download](https://raw.githubusercontent.com/snamoah/Randomi
 Initialize Randomizr class:
 
 ```
-var array = [ { 'name': 'Naana' }, { 'name': 'Samuel' }, { 'name': 'Kiss' } ];
+var array = [ { 'name': 'Naana' }, { 'name': 'Samuel' }, { 'name': 'Kissi' } ];
 
 Randomizr.init(array);        //initialize Randomizr with the array
 ```
