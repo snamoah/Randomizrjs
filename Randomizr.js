@@ -12,37 +12,38 @@ Array.prototype.shuffle = function() {
   return this;
 }
 
-Array.prototype.is_empty = function() {
+Array.prototype.isEmpty = function() {
   return (this.length == 0);
 }
 
 Randomizr = function() {
-  temp_array = array_of_items = [];
+  tempArray = arrayOfItems = [];
 
   //randomly generate item
-  var get_item = function() {
-    if(temp_array.is_empty())
-      temp_array = array_of_items.slice().shuffle();
+  var getItem = function() {
+    if(tempArray.isEmpty())
+      tempArray = arrayOfItems.slice().shuffle();
 
-    return temp_array.shuffle().shift();
+    return tempArray.shuffle().shift();
   };
 
   // public methods
   return {
     'init': function(array) {
-      temp_array = array_of_items = array;
+      tempArray = array.slice();
+      arrayOfItems = array.slice();
     },
-    'get_all_items': function() {
-      return array_of_items.shuffle();
+    'getAllItems': function() {
+      return arrayOfItems.slice().shuffle();
     },
-    'get_random_item': function() {
-      return get_item();
+    'getRandomItem': function() {
+      return getItem();
     },
-    'get_random_items': function(number) {
+    'getRandomItems': function(number) {
       items = [];
 
       for(var i = 0; i < number; i++)
-        items.push(get_item());
+        items.push(getItem());
 
       return items;
     }
