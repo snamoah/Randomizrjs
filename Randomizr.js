@@ -41,9 +41,20 @@ Randomizr = function() {
     },
     'getRandomItems': function(number) {
       items = [];
+      
+      if(number > arrayOfItems.length) {
+        throw "number enter is greater than number of objects in array";
+        return
+      }
 
-      for(var i = 0; i < number; i++)
-        items.push(getItem());
+      for(var i = 0; i < number; i++) {
+        a = null;
+        do {
+          a = getItem();
+        } while(items.indeOf(a) != -1);
+
+        items.push(a);
+      }
 
       return items;
     }
