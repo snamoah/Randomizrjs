@@ -51,7 +51,7 @@ Randomizr = function() {
         a = null;
         do {
           a = getItem();
-        } while(items.indeOf(a) != -1);
+        } while(items.indexOf(a) != -1);
 
         items.push(a);
       }
